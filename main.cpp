@@ -1,3 +1,6 @@
+#include<stdio.h>
+//#include "klee/klee.h"
+
 #define INVAILD -1
 #define NOT_TRIANGLE -2
 #define TRIANGLE 0
@@ -44,3 +47,18 @@ int triangle_type(int x, int y, int z){
     return TRIANGLE;
     
 } 
+
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    //klee_make_symbolic(&a, sizeof(a), "a");
+    //klee_make_symbolic(&b, sizeof(b), "b");
+    //klee_make_symbolic(&c, sizeof(c), "c");
+    int ans;
+    ans = triangle_type(a, b, c);
+
+    printf("%d\n", ans);
+    return 0;
+}
+            
